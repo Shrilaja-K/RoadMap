@@ -1,0 +1,30 @@
+header{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(4, 5, 68);
+    background-color: rgb(130, 163, 192);
+    padding:10px;
+}
+.container{
+    width: auto;
+    display:flex;
+    flex-direction: row;
+    background-color: rgba(180, 129, 105, 0.555);
+    padding: 20px;
+    justify-content: space-around;
+}
+.card{
+    background-color: aliceblue;
+    padding: 10px;
+    margin: 10px;
+    width: auto;
+}
+.image{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.loginbutton{
+    background-color: rgb(229, 229, 245);
+}
