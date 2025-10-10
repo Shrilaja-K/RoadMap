@@ -8,7 +8,8 @@
 </head>
 <body>
     <header class="head">
-        <button class="menu">MENU</button>
+        <button class="menu" onclick="statement()">MENU</button>
+        <p id="demo"> </p>
         <h1>STUDENT PORTAL</h1>
          <nav>
           <a href="#ser">Services</a> 
@@ -95,8 +96,8 @@
     <center><h3>For Queries</h3></center>
     <section id="query" class="queryform">
         <form class="form">
-            <input type="text" placeholder="Your Name" required><br>
-            <br><input type="email" placeholder="Email" required><br>
+            <input id="name" type="text" placeholder="Your Name" onchange="uppercase()"><br>
+            <br><input id="mail" type="email" placeholder="Email" oninput="lowercase()" required><br>
             <br><textarea placeholder="Query" required></textarea><br>
             <br><button class="submit" type="submit">Submit</button>
         </form>
@@ -104,5 +105,19 @@
     <footer class="foot">
         <p>All rights reserved</p>
     </footer>
+    <script>
+        function statement(){
+            document.getElementById("demo").innerHTML="No Menu Available";
+        }
+        function uppercase(){
+            var x=document.getElementById("name");
+            x.value=x.value.toUpperCase();
+        }
+        function lowercase(){
+            var y=document.getElementById("mail");
+            y.value=y.value.toLowerCase();
+        }
+    </script>
+    
 </body>
 </html>
