@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="head">
         <button class="menu">MENU</button>
         <h1>STUDENT PORTAL</h1>
-        <button class="login">LOGIN</button>
+         <nav>
+          <a href="#ser">Services</a> 
+          <a href="#rank">Rank Holders</a> 
+          <a href="#cert">Certifications</a>
+          <a href="#query">Queries</a> 
+          <a href="login.html">Login</a> 
+         </nav> 
     </header>   
     <center><h3>SERVICES</h3></center>
-    <section class="services">
+    <section id="ser" class="services">
         
         <div class="sr">Attendance</div>
         <div class="sr">Fees</div>
@@ -22,7 +28,7 @@
         <div class="sr">Certifications</div>
     </section>
     <center><h3>RANK HOLDERS</h3></center>  
-    <section class="rankholders">
+    <section id="rank" class="rankholders">
         <div class="rk">
             <img class="image" src="Profile.jpg">
             <h3>Ram</h3>
@@ -43,16 +49,21 @@
             <h3>Raj</h3>
             <p>Rankholder - EEE<br>GPA: 9.5</p>
         </div>
+        <div class="rk">
+            <img class="image" src="Profile.jpg">
+            <h3>Ravi</h3>
+            <p>Rankholder - MECH<br>GPA: 9.5</p>
+        </div>
     </section>
     <center><h3>CERTIFICATIONS</h3></center>  
-    <section class="certification">
+    <section id="cert" class="certification">
         <div class="certify">Java</div>
         <div class="certify">C</div>
         <div class="certify">C++</div>
         <div class="certify">Python</div>
     </section>
     <center><h3>DEPARTMENT DETAILS</h3></center>  
-    <section class="timetable">
+    <section id="tab" class="timetable">
         <table class="tt">
             <tr>
                 <th>Department</th>
@@ -82,7 +93,7 @@
         </table>
     </section>
     <center><h3>For Queries</h3></center>
-    <section class="queryform">
+    <section id="query" class="queryform">
         <form class="form">
             <input type="text" placeholder="Your Name" required><br>
             <br><input type="email" placeholder="Email" required><br>
