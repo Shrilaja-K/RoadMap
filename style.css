@@ -1,30 +1,132 @@
-header{
+.head{
+    background-color: rgba(100, 20, 20, 0.692);
     text-align: center;
-    font-family:'Times New Roman', Times, serif;
-    color: rgb(4, 5, 68);
-    background-color: rgb(130, 163, 192);
-    padding:10px;
-}
-.container{
-    width: auto;
-    display:flex;
-    flex-direction: row;
-    background-color: rgba(180, 129, 105, 0.555);
+    position: relative;
     padding: 20px;
-    justify-content: space-around;
 }
-.card{
-    background-color: aliceblue;
-    padding: 10px;
-    margin: 10px;
+.menu{
+    background-color: rgb(83, 17, 17);
+    padding: 20px;
+    color: white;
+    border: none;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    cursor: pointer;
+}
+.login{
+    background-color: rgb(83, 17, 17);
+    padding: 20px;
+    color: white;
+    border: none;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+}
+.services{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(63, 13, 13, 0.384);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
     width: auto;
+    
+}
+.sr{
+    background-color: rgba(83, 17, 17, 0.692);
+    padding: 10px;
+    margin:  10px;
+    width: 200px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+.rankholders{
+    background-color: rgba(63, 13, 13, 0.384);
+    padding: 20px;
+    margin-top: 20px;
+    display: grid;
+    gap:50px;
+    grid-template-columns: auto auto auto auto;
+    border-radius: 5px;
+}
+.rk{
+        background-color: rgba(83, 17, 17, 0.692);
+        padding: 20px;
+        border-radius: 5px;
+        color: white;
+        justify-content: center;
+        text-align: center;
+
 }
 .image{
-    display: block;
     width: 100px;
     height: 100px;
-    margin-bottom: 10px;
 }
-.loginbutton{
-    background-color: rgb(229, 229, 245);
+.certification{
+    background-color: rgba(63, 13, 13, 0.384);
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    justify-content:center;
+    padding: 20px;
+}
+.certify{
+        background-color: rgba(83, 17, 17, 0.692);
+        padding: 20px;
+        margin: 10px;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+        width: 200px;
+        
+}
+.timetable{
+     padding: 20px;
+     
+}   
+table{
+     width: 100%;
+}
+
+ table, th, td {
+  border: 1px solid rgb(14, 13, 13);
+  border-collapse: collapse;
+}
+
+th, td {
+  background-color: rgb(255, 252, 252);
+  padding: 10px;
+  text-align: center;
+}
+.queryform{
+    background-color: rgba(63, 13, 13, 0.384);
+    padding: 20px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+.form input,textarea{
+    padding: 10px;
+    margin: 10px;
+    resize: none;
+}
+.submit{
+    color: white;
+    background-color: rgba(83, 17, 17, 0.692);
+    padding: 10px;
+    cursor: pointer;
+    max-width: 400px;
+}
+.foot{
+    background-color: rgba(100, 20, 20, 0.692);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
 }
