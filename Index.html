@@ -7,18 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="main">
     <header class="head">
-        <button class="menu" onclick="statement()">MENU</button>
+        <button class="menu" onclick="openNav()">MENU</button>
+         <div id="mySidenav" class="sidenav">
+         <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+         <a href="#ser">Services</a> 
+         <a href="#rank">Rank Holders</a> 
+         <a href="#cert">Certifications</a>
+         <a href="#gpa">GPA Calculator</a>
+         <a href="#query">Queries</a> 
+         <a href="login.html">Login</a> 
+    </div>
+ 
         <p id="demo"> </p>
         <h1>STUDENT PORTAL</h1>
-         <nav>
-          <a href="#ser">Services</a> 
-          <a href="#rank">Rank Holders</a> 
-          <a href="#cert">Certifications</a>
-          <a href="#query">Queries</a> 
-          <a href="login.html">Login</a> 
-         </nav> 
-    </header>   
+    </header>  
+   
     <center><h3>SERVICES</h3></center>
     <section id="ser" class="services">
         
@@ -93,6 +98,19 @@
             </tr>
         </table>
     </section>
+    <center><h3>GPA Calculator</h3></center>
+
+<section class="gpa-section" id="gpa">
+    <form class="gpaForm">
+        <input type="text" id="stuName" placeholder="Student Name"><br><br>
+        <input type="number" id="mark1" placeholder="Subject 1 Marks"><br><br>
+        <input type="number" id="mark2" placeholder="Subject 2 Marks"><br><br>
+        <input type="number" id="mark3" placeholder="Subject 3 Marks"><br><br>
+        <button type="button" id="calculate" onclick="calculateGPA()">Calculate GPA</button>
+        <p id="gpaOutput"></p>
+    </form>
+</section>
+
     <center><h3>For Queries</h3></center>
     <section id="query" class="queryform">
         <form class="form">
@@ -105,6 +123,7 @@
     <footer class="foot">
         <p>All rights reserved</p>
     </footer>
+    </div>
     <script>
         function statement(){
             document.getElementById("demo").innerHTML="No Menu Available";
@@ -117,6 +136,48 @@
             var y=document.getElementById("mail");
             y.value=y.value.toLowerCase();
         }
+        
+        sayHello(); 
+        function sayHello() {
+            console.log("Welcome to the GPA Calculator!");
+        }
+
+        var student; 
+
+        function calculateGPA() {
+
+              var name = document.getElementById("stuName").value;
+              var m1 = Number(document.getElementById("mark1").value); 
+              var m2 = Number(document.getElementById("mark2").value);
+              var m3 = Number(document.getElementById("mark3").value);
+
+            if (name !== "") {
+              var total = m1 + m2 + m3; 
+              let gpa = (total / 30).toFixed(2); 
+              student = name; 
+              showResult(name, gpa);
+            } else {
+              document.getElementById("gpaOutput").innerHTML = "Please enter all details.";
+            }
+        }    
+
+        const showResult = (n, g) => {
+          let resultText = `${n}'s GPA is ${g}`;
+          resultText += g >= 9 ? " - Rank Holder" : " - Keep Improving";
+          document.getElementById("gpaOutput").innerHTML = resultText;
+        };
+
+
+        function openNav() {
+           document.getElementById("mySidenav").style.width = "250px";
+           document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+           document.getElementById("mySidenav").style.width = "0";
+           document.getElementById("main").style.marginLeft = "0";
+        } 
+
     </script>
     
 </body>
