@@ -14,6 +14,18 @@
     top: 30px;
     cursor: pointer;
 }
+.details{
+    background-color: rgb(83, 17, 17);
+    padding: 20px;
+    color: white;
+    border: none;
+    text-decoration: none;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    font-size: 12px;
+}
 .services{
     margin-top: 20px;
     padding: 20px;
@@ -193,7 +205,6 @@ nav a {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
   top: 0;
   left: 0;
   background-color:  rgba(83, 17, 17, 0.692);
@@ -225,7 +236,7 @@ nav a {
   padding: 16px;
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-width: 600px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
