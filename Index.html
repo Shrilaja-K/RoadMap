@@ -19,7 +19,7 @@
          <a href="#query">Queries</a> 
          <a href="login.html">Login</a> 
     </div>
-         <a class   ="details" href="list.html">DETAILS</a>
+         <a class   ="details">DETAILS</a>
         <p id="demo"> </p>
         <h1>STUDENT PORTAL</h1>
     </header>  
@@ -63,7 +63,7 @@
     </section>
     <center><h3>CERTIFICATIONS</h3></center>  
     <section id="cert" class="certification">
-        <div class="certify">Java</div>
+        <div class="certify" ><a class="jss" href="jsc.html">Javascript</a></div>
         <div class="certify">C</div>
         <div class="certify">C++</div>
         <div class="certify">Python</div>
@@ -125,15 +125,13 @@
     </footer>
     </div>
     <script>
-        function statement(){
-            document.getElementById("demo").innerHTML="No Menu Available";
-        }
+        
         function uppercase(){
-            var x=document.getElementById("name");
+            let x=document.getElementById("name");
             x.value=x.value.toUpperCase();
         }
         function lowercase(){
-            var y=document.getElementById("mail");
+            let y=document.getElementById("mail");
             y.value=y.value.toLowerCase();
         }
         
@@ -142,17 +140,17 @@
             console.log("Welcome to the GPA Calculator!");
         }
 
-        var student; 
+        let student; 
 
         function calculateGPA() {
 
-              var name = document.getElementById("stuName").value;
-              var m1 = Number(document.getElementById("mark1").value); 
-              var m2 = Number(document.getElementById("mark2").value);
-              var m3 = Number(document.getElementById("mark3").value);
+              let name = document.getElementById("stuName").value;
+              let m1 = Number(document.getElementById("mark1").value); 
+              let m2 = Number(document.getElementById("mark2").value);
+              let m3 = Number(document.getElementById("mark3").value);
 
             if (name !== "") {
-              var total = m1 + m2 + m3; 
+              let total = m1 + m2 + m3; 
               let gpa = (total / 30).toFixed(2); 
               student = name; 
               showResult(name, gpa);
@@ -181,4 +179,4 @@
     </script>
     
 </body>
-</html>
+</html>     
