@@ -241,5 +241,33 @@ nav a {
   .sidenav a {font-size: 18px;}
 }
 
+.jss{
+    text-decoration: none;
+    color: white;
+}
+.elemm{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(63, 13, 13, 0.384);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    width: auto;
+    
+}
+.elem{
+    background-color: rgba(83, 17, 17, 0.692);
+    padding: 10px;
+    margin:  10px;
+    width: 200px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
 
-
+#demo {
+    color:   rgb(83, 17, 17);
+    text-align: center;
+}
