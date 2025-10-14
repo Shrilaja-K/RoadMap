@@ -19,10 +19,20 @@
         <div class="elem" id="calculates" onclick="promise()">Promises</div>
         <div class="elem" id="calculates" onclick="asyncawait()">Async,Await</div>
         <div class="elem" id="calculates" onclick="applybindcall()">Apply,Bind,Call</div>
-    </section>
+    </section>  
     <section>
         <p id="demo"></p>
     </section>
+    <section>
+      <button id="myBtn">Click</button>
+      <button id="remove">Remove</button>
+    </section>
+    <section>
+      <div id="myDIV" style="background-color: rgb(177, 102, 102);  padding: 50px;">
+        MOVE HERE
+      </div>
+    </section>
+    
     <script>
         const arrowfunc=()=>{
         myFunction = (a, b) => a * b;
@@ -175,9 +185,25 @@
             `;
             document.getElementById("demo").innerHTML = output;
         }
-        
 
 
+        function eventlisteners() {
+            document.getElementById("myBtn").addEventListener("click", () => {
+                alert("Hello World!");
+            });
+            document.getElementById("myDIV").addEventListener("mousemove", moves);  
+            document.getElementById("remove").addEventListener("click", removeevent);
+        }
+
+        function moves(){
+                 document.getElementById("demo").innerHTML = Math.random();
+        }
+
+        function removeevent() {
+            document.getElementById("myDIV").removeEventListener("mousemove", moves);
+            document.getElementById("demo").innerHTML = "Mouse move event listener removed!";
+        }
+        eventlisteners();
     </script>
-</body>
+  </body>
 </html>
