@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center><h3>COURSES</h3></center>
+    <section id="elem" class="elemm">
+        <div class="elem" id="calculates" onclick="arrowfunc()">Arrow Functions</div>
+        <div class="elem" id="calculates" onclick="templ()">Template Literals</div>
+        <div class="elem" id="calculates" onclick="stringman()">String Manipulation</div>
+        <div class="elem" id="calculates" onclick="Arrayy()">Array Methods</div>
+        <div class="elem" id="calculates" onclick="eventlisteners()">Event Listeners</div>
+        <div class="elem" id="calculates" onclick="date()">Date Functions</div>
+        <div class="elem" id="calculates" onclick="callback()">CallBacks</div>
+        <div class="elem" id="calculates" onclick="promise()">Promises</div>
+        <div class="elem" id="calculates" onclick="asyncawait()">Async,Await</div>
+        <div class="elem" id="calculates" onclick="applybindcall()">Apply,Bind,Call</div>
+    </section>
+    <section>
+        <p id="demo"></p>
+    </section>
+    <script>
+        const arrowfunc=()=>{
+        myFunction = (a, b) => a * b;
+        let result = myFunction(4, 5);
+        document.getElementById("demo").innerHTML = "The product is: " + result;
+        }
+
+        function templ(){
+            let temp = "Template Literals";
+          document.getElementById("demo").innerHTML = `This is displayed using ${temp}`;
+        }
+
+        function stringman(){
+             let sentence="I am Working in Rently";
+             let s2="from last week"; 
+             let s3="I am going to home \3" ;
+             let s4="     Hellooooo     ";
+             let s5="5"
+             let output = "";
+             output += "The length is: " + sentence.length + "<br>";
+             output += "The Character at index 0 is: " + sentence.charAt(0) + "<br>";
+             output += "Concatenation: " + sentence.concat(" ",s2) + "<br>";
+             output += "Slicing: " + sentence.slice(5,12) + "<br>";
+             output += "Well Formed: " + s3.toWellFormed() + "<br>";
+             output += "Trim: " + s4.trim() + "<br>";
+             output += "Padded: " + s5.padEnd(4,0) + "<br>";
+             output += "Replace: " + s3.replace("home","office") + "<br>";
+            document.getElementById("demo").innerHTML = output;
+        }
+
+        function Arrayy(){
+            let text="Map,GroupBy and CallBacks <br>";
+           const marks = [
+               {name:"Stu1", scores:450},
+               {name:"Stu2", scores:470},
+               {name:"Stu3", scores:380},
+               {name:"Stu4", scores:390}
+            ];
+
+            function myCallback({ scores }) {
+              return scores > 400 ? "Well Performed" : "Continue Learning";
+            }
+     
+            const result = Map.groupBy(marks, myCallback);
+
+            text +="<br> These students have performed well: <br>";
+            for (let x of result.get("Well Performed")) {
+              text += x.name + " " + x.scores + "<br>";
+            }
+            text += "<br>These students need to learn: <br>";
+            for (let x of result.get("Continue Learning")) {
+              text += x.name + " " + x.scores + "<br>";
+            }
+
+            text+="<br> Filtered Pass Students <br>"
+            const passingStudents = marks.filter(checkpass);
+      
+            function checkpass(student) {
+              return student.scores > 400;
+            }
+            for (let student of passingStudents) {
+               text += student.name + " " + student.scores + "<br>";
+            }
+            
+           const red = marks.reduce(getSum, 0);
+
+           function getSum(total, student) {
+             return total + student.scores;
+            }
+            text+="<br> Cummulative Marks [Reduce] <br>";
+            text+=red;
+
+            document.getElementById("demo").innerHTML = text;
+            
+        }
+
+        function date(){
+            const d = new Date();
+            const d2=d.toUTCString();
+            document.getElementById("demo").innerHTML = d + " /n " + d2;
+        }
+       
+        function callback(){
+          function Display(something) {
+            document.getElementById("demo").innerHTML = "Addition using Callbacks: "+something;
+          }
+
+          function Calculator(num1, num2, Callback) {
+            let sum = num1 + num2;
+            Callback(sum);
+          }
+
+           Calculator(5, 5, Display);
+        }
+
+        function promise(){
+          function Display(something) {
+             document.getElementById("demo").innerHTML = "Output of Promise: "+ something;
+          }
+
+         let msg = new Promise(function(Resolve, Reject) {
+          let x = 0;
+          if (x == 0) {
+           Resolve("Promise Fullfilled");
+          } else {
+           Reject("Error");
+          }
+       });
+
+        msg.then(
+         function(value) {Display(value);},
+         function(error) {Display(error);}
+        );
+      }
+
+      function asyncawait(){
+        let text="";
+        function display(){
+          return new Promise((Resolve,Reject)=>{
+            setTimeout(()=>{
+              text+="<br> Task Completed <br>";
+              Resolve();
+            },1000)
+          })
+        }
+          async function run(){
+           try{
+            await display();
+            text+="<br> Promise Fullfilled <br>";
+           }
+           catch(error){
+            text+="<br> Promise Rejected <br>";
+           }
+           document.getElementById("demo").innerHTML = text;
+          }
+          run();
+    }
+        function applybindcall() {
+            const obj = {
+                message: 'Hello'
+            };
+            function greet(name) {
+                return `${this.message}, ${name}!`;
+            }
+
+            const output = `
+                Call: ${greet.call(obj, 'Alice')} <br>
+                Apply: ${greet.apply(obj, ['Bob'])} <br>
+                Bind: ${greet.bind(obj)('Charlie')}
+            `;
+            document.getElementById("demo").innerHTML = output;
+        }
+        
+
+
+    </script>
+</body>
+</html>
