@@ -13,7 +13,7 @@
         <div class="elem" id="calculates" onclick="templ()">Template Literals</div>
         <div class="elem" id="calculates" onclick="stringman()">String Manipulation</div>
         <div class="elem" id="calculates" onclick="Arrayy()">Array Methods</div>
-        <div class="elem" id="calculates" onclick="eventlisteners()">Event Listeners</div>
+        <div class="elem" id="calculates" onclick="showEventListeners()">Event Listeners</div>
         <div class="elem" id="calculates" onclick="date()">Date Functions</div>
         <div class="elem" id="calculates" onclick="callback()">CallBacks</div>
         <div class="elem" id="calculates" onclick="promise()">Promises</div>
@@ -23,15 +23,12 @@
     <section>
         <p id="demo"></p>
     </section>
-    <section>
-      <button id="myBtn">Click</button>
-      <button id="remove">Remove</button>
-    </section>
-    <section>
-      <div id="myDIV" style="background-color: rgb(177, 102, 102);  padding: 50px;">
-        MOVE HERE
-      </div>
-    </section>
+     <section id="event-section">
+       <button id="ebtn">Click</button>
+       <button id="remove">Remove</button>
+        <div id="divv">MOVE HERE</div>
+     </section>
+    
     
     <script>
         const arrowfunc=()=>{
@@ -187,23 +184,29 @@
         }
 
 
-        function eventlisteners() {
-            document.getElementById("myBtn").addEventListener("click", () => {
-                alert("Hello World!");
-            });
-            document.getElementById("myDIV").addEventListener("mousemove", moves);  
-            document.getElementById("remove").addEventListener("click", removeevent);
+        function showEventListeners() {
+      
+          document.getElementById("event-section").style.display = "block";
+
+          var ebtn = document.getElementById("ebtn");
+          var divv = document.getElementById("divv");
+          var rbtn = document.getElementById("remove");
+
+          ebtn.onclick = function() {
+            alert("Hello World!");
+          };
+
+          divv.onmousemove = showRandomNumber;
+
+          rbtn.onclick = function() {
+            divv.onmousemove = null;
+            document.getElementById("demo").innerHTML = "Mouse move event removed!";
+          };
         }
 
-        function moves(){
-                 document.getElementById("demo").innerHTML = Math.random();
+        function showRandomNumber() {
+          document.getElementById("demo").innerHTML = Math.random();
         }
-
-        function removeevent() {
-            document.getElementById("myDIV").removeEventListener("mousemove", moves);
-            document.getElementById("demo").innerHTML = "Mouse move event listener removed!";
-        }
-        eventlisteners();
 
     </script>
   </body>
