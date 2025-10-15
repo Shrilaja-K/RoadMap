@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data.min.js"></script>
+
+
 </head>
 <body>
     <center><h3>COURSES</h3></center>
@@ -19,6 +24,8 @@
         <div class="elem" id="calculates" onclick="promise()">Promises</div>
         <div class="elem" id="calculates" onclick="asyncawait()">Async,Await</div>
         <div class="elem" id="calculates" onclick="applybindcall()">Apply,Bind,Call</div>
+        <div class="elem" id="calculates" onclick="timezone()">Timezone</div>
+
     </section>  
     <section>
         <p id="demo"></p>
@@ -207,6 +214,29 @@
         function showRandomNumber() {
           document.getElementById("demo").innerHTML = Math.random();
         }
+
+        function timezone() {
+          let output = "";
+
+          const nowInTokyo = moment().tz("Asia/Tokyo").format("YYYY-MM-DD HH:mm:ss");
+          const nowInNewYork = moment().tz("America/New_York").format("YYYY-MM-DD HH:mm:ss");
+          const nowInLondon = moment().tz("Europe/London").format("YYYY-MM-DD HH:mm:ss");
+
+          output += "Current Times:<br>";
+          output += "Tokyo: " + nowInTokyo + "<br>";
+          output += "New York: " + nowInNewYork + "<br>";
+          output += "London: " + nowInLondon + "<br><br>";
+
+          const meetingTimeNY = moment.tz("2025-10-15 09:00", "America/New_York");
+          const meetingTimeLondon = meetingTimeNY.clone().tz("Europe/London");
+
+          output += "Meeting Time Conversion:<br>";
+          output += "New York Time: " + meetingTimeNY.format("YYYY-MM-DD HH:mm:ss") + "<br>";
+          output += "London Time: " + meetingTimeLondon.format("YYYY-MM-DD HH:mm:ss") + "<br>";
+
+          document.getElementById("demo").innerHTML = output;
+     }
+
 
     </script>
   </body>
