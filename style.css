@@ -271,3 +271,13 @@ nav a {
     color:   rgb(83, 17, 17);
     text-align: center;
 }
+ #event-section {
+      display: none;
+      margin-top: 20px;
+}
+
+#divv {
+      background-color: rgb(177, 102, 102);
+      padding: 50px;
+      margin-top: 10px;
+}
